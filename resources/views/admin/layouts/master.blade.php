@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>Dashboard Template · Bootstrap v5.0</title>
+    <title>@yield('title')</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
@@ -44,6 +44,7 @@
     
     <!-- Custom styles for this template -->
     <link href="{{ asset('bootstrap5/dashboard.css') }}" rel="stylesheet">
+    @yield('header')
   </head>
   <body>
     
@@ -74,5 +75,37 @@
 
     <script src="{{ asset('bootstrap5/js/bootstrap.bundle.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+    <script src="{{ asset('acd/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{asset('sweetalert/sweetalert.min.js')}}"></script>
+<script>
+//flash message
+        @if(session()->has('sukses'))
+        swal({
+            type: "success",
+            icon: "success",
+            title: "BERHASIL!",
+            text: "{{ session('sukses') }}",
+            timer: 5000,
+            showConfirmButton: false,
+            showCancelButton: false,
+            buttons: false,
+        });
+        @elseif(session()->has('gagal'))
+        swal({
+            type: "error",
+            icon: "error",
+            title: "GAGAL!",
+            text: "{{ session('gagal') }}",
+            timer: 5000,
+            showConfirmButton: false,
+            showCancelButton: false,
+            buttons: false,
+        });
+
+        @elseif(session()->has('info'))
+          swal("Pendaftaran Gagal!!", "{{ session('info') }}");
+        @endif
+</script>
+@yield('footer')
   </body>
 </html>

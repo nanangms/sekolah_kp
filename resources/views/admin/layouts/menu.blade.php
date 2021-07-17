@@ -11,6 +11,36 @@
           Dashboard
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/data-pendaftaran/tambah">
+          <i class="fa fa-edit" ></i>
+          Form Pendaftaran Siswa
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/data-pendaftaran">
+          <i class="fa fa-list" ></i>
+          Data Pendaftaran
+        </a>
+      </li>
+      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+        <span>Setting</span>
+        <a class="link-secondary" href="#" aria-label="Add a new report">
+          <span data-feather="plus-circle"></span>
+        </a>
+      </h6>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/user">
+          <i class="fa fa-users"></i>
+          Manajemen User
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/data-sekolah">
+          <i class="fa fa-school"></i>
+          Data Sekolah
+        </a>
+      </li>
       @else
       <li class="nav-item">
         <a class="nav-link" aria-current="page" href="/home">

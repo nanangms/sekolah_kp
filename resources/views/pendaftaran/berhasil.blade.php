@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-Dashboard
+Pendaftaran Siswa Baru
 @endsection
 @section('header')
 
@@ -12,8 +12,17 @@ Dashboard
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h4>Pendaftaran Siswa baru</h4>
   </div>
+  @if($data_siswa->status == null)
+    <div class="alert alert-warning"><h4>Pendaftaran Telah Dikirim, sedang dalam proses Verifikasi</h4></div>
+  @elseif($data_siswa->status == 'Diterima')
+    <div class="alert alert-success"><h4>Pendaftaran Telah diverifikasi, selamat anda lolos ketahap berikutnya</h4></div>
+  @elseif($data_siswa->status == 'Ditolak')
+    <div class="alert alert-danger"><h4>Pendaftaran Telah diverifikasi, Maaf pendaftaran anda ditolak</h4></div>
+  @endif
 
-  <div class="alert alert-warning"><h4>Pendaftaran Telah Dikirim, sedang dalam proses Verifikasi</h4></div>
+  <hr>
+  <p align="left"><a href="/cetak-formulir/{{$data_siswa->no_pendaftaran}}" target="_blank" class="btn btn-primary"><i class="fa fa-print"></i> Cetak Formulir</a></p>
+  Nomor pendaftaran Anda : {{$data_siswa->no_pendaftaran}}<br><br>
   Status Verifikasi : 
   @if($data_siswa->status == null)
     <button class="btn btn-warning">Belum Diverifikasi</button>
@@ -23,7 +32,7 @@ Dashboard
     <button class="btn btn-danger">Ditolak</button>
   @endif
   <br><br>
-  Cetak Formulir <a href="/cetak-formulir" class="btn btn-primary"><i class="fa fa-print"></i> Cetak Formulir</a>
+  
 
 </main>
 @endsection

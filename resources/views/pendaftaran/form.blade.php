@@ -31,7 +31,7 @@ PONDOK PESANTREN AS-SALAM TEBO TAHUN AJARAN 2021/2022
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;1. Nama Lengkap</td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="text" name="nama_lengkap" class="form-control" placeholder=""></td>
+      <td><input type="text" name="nama_lengkap" class="form-control" value="{{old('nama_lengkap')}}" placeholder=""></td>
     </tr>
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;2. Jenis Kelamin</td>
@@ -39,15 +39,15 @@ PONDOK PESANTREN AS-SALAM TEBO TAHUN AJARAN 2021/2022
       <td>
         <select name="jenis_kelamin" class="form-control">
           <option value="">[Pilih]</option>
-          <option value="Laki-laki">Laki-laki</option>
-          <option value="Perempuan">Perempuan</option>
+          <option value="Laki-laki" @if(old("jenis_kelamin") == 'Laki-laki') selected @endif>Laki-laki</option>
+          <option value="Perempuan" @if(old("jenis_kelamin") == 'Perempuan') selected @endif>Perempuan</option>
         </select>
       </td>
     </tr>
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;3. Tempat Lahir</td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="text" name="tempat_lahir" class="form-control" placeholder=""></td>
+      <td><input type="text" name="tempat_lahir" class="form-control" value="{{old('tempat_lahir')}}" placeholder=""></td>
     </tr>
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;4. Tanggal Lahir</td>
@@ -94,17 +94,17 @@ PONDOK PESANTREN AS-SALAM TEBO TAHUN AJARAN 2021/2022
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;5. Anak Ke-</td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="number" name="anak_ke" class="form-control" placeholder=""></td>
+      <td><input type="number" name="anak_ke" class="form-control" value="{{old('anak_ke')}}" placeholder=""></td>
     </tr>
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;6. Jumlah Saudara</td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="number" name="jml_saudara" class="form-control" placeholder=""></td>
+      <td><input type="number" name="jml_saudara" class="form-control" value="{{old('jml_saudara')}}" placeholder=""></td>
     </tr>
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;7. Alamat Tempat Tinggal</td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="text" name="alamat" class="form-control" placeholder=""></td>
+      <td><input type="text" name="alamat" class="form-control" value="{{old('alamat')}}" placeholder=""></td>
     </tr>
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;8. Jurusan</td>
@@ -128,12 +128,12 @@ PONDOK PESANTREN AS-SALAM TEBO TAHUN AJARAN 2021/2022
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;10. Nama Sekolah Sebelumnya</td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="text" name="sekolah_sebelumnya" class="form-control" placeholder=""></td>
+      <td><input type="text" name="sekolah_sebelumnya" class="form-control" value="{{old('sekolah_sebelumnya')}}" placeholder=""></td>
     </tr>
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;11. Alamat Sekolah Sebelumnya</td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="text" name="alamat_sekolah_sebelumnya" class="form-control" placeholder=""></td>
+      <td><input type="text" name="alamat_sekolah_sebelumnya" value="{{old('alamat_sekolah_sebelumnya')}}" class="form-control" placeholder=""></td>
     </tr>
   </table>
 
@@ -148,12 +148,12 @@ PONDOK PESANTREN AS-SALAM TEBO TAHUN AJARAN 2021/2022
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Ayah</td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="text" name="nama_ayah" class="form-control" placeholder=""></td>
+      <td><input type="text" name="nama_ayah" value="{{old('nama_ayah')}}" class="form-control" placeholder=""></td>
     </tr>
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Ibu</td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="text" name="nama_ibu" class="form-control" placeholder=""></td>
+      <td><input type="text" name="nama_ibu" value="{{old('nama_ibu')}}" class="form-control" placeholder=""></td>
     </tr>
     <tr>
       <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;2. Pekerjaan</td>
@@ -162,17 +162,17 @@ PONDOK PESANTREN AS-SALAM TEBO TAHUN AJARAN 2021/2022
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Ayah</td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="text" name="pekerjaan_ayah" class="form-control" placeholder=""></td>
+      <td><input type="text" name="pekerjaan_ayah" value="{{old('pekerjaan_ayah')}}" class="form-control" placeholder=""></td>
     </tr>
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Ibu</td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="text" name="pekerjaan_ibu" class="form-control" placeholder=""></td>
+      <td><input type="text" name="pekerjaan_ibu" value="{{old('pekerjaan_ibu')}}" class="form-control" placeholder=""></td>
     </tr>
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;3. Alamat Orang Tua</td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="text" name="alamat_orangtua" class="form-control" placeholder=""></td>
+      <td><input type="text" name="alamat_orangtua" value="{{old('alamat_orangtua')}}" class="form-control" placeholder=""></td>
     </tr>
     <tr>
       <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;4. Penghasilan Rata-rata Perbulan</td>
@@ -184,10 +184,10 @@ PONDOK PESANTREN AS-SALAM TEBO TAHUN AJARAN 2021/2022
       <td>
         <select name="penghasilan_ayah" class="form-control">
           <option value="">[Pilih]</option>
-          <option value="0 - 999.999 ribu">0 - 999.999 ribu </option>
-          <option value="1 juta - 1.999.999 juta">1 juta - 1.999.999 juta  </option>
-          <option value="2 juta - 4.999.999 juta">2 juta - 4.999.999 juta </option>
-          <option value="5 juta - 10 juta">5 juta – 10 juta</option>
+          <option value="0 - 999.999 ribu" @if(old("penghasilan_ayah") == "0 - 999.999 ribu") selected @endif>0 - 999.999 ribu </option>
+          <option value="1 juta - 1.999.999 juta" @if(old("penghasilan_ayah") == "1 juta - 1.999.999 juta") selected @endif>1 juta - 1.999.999 juta  </option>
+          <option value="2 juta - 4.999.999 juta" @if(old("penghasilan_ayah") == "2 juta - 4.999.999 juta") selected @endif>2 juta - 4.999.999 juta </option>
+          <option value="5 juta - 10 juta" @if(old("penghasilan_ayah") == "5 juta - 10 juta") selected @endif>5 juta – 10 juta</option>
         </select>
       </td>
     </tr>
@@ -197,37 +197,37 @@ PONDOK PESANTREN AS-SALAM TEBO TAHUN AJARAN 2021/2022
       <td>
         <select name="penghasilan_ibu" class="form-control">
           <option value="">[Pilih]</option>
-          <option value="0 - 999.999 ribu">0 - 999.999 ribu </option>
-          <option value="1 juta - 1.999.999 juta">1 juta - 1.999.999 juta  </option>
-          <option value="2 juta - 4.999.999 juta">2 juta - 4.999.999 juta </option>
-          <option value="5 juta - 10 juta">5 juta – 10 juta</option>
+          <option value="0 - 999.999 ribu" @if(old("penghasilan_ibu") == "0 - 999.999 ribu") selected @endif>0 - 999.999 ribu </option>
+          <option value="1 juta - 1.999.999 juta" @if(old("penghasilan_ibu") == "1 juta - 1.999.999 juta") selected @endif>1 juta - 1.999.999 juta  </option>
+          <option value="2 juta - 4.999.999 juta" @if(old("penghasilan_ibu") == "2 juta - 4.999.999 juta") selected @endif>2 juta - 4.999.999 juta </option>
+          <option value="5 juta - 10 juta" @if(old("penghasilan_ibu") == "5 juta - 10 juta") selected @endif>5 juta – 10 juta</option>
         </select>
       </td>
     </tr>
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;5. Wali Santri</td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="text" name="wali" class="form-control" placeholder=""></td>
+      <td><input type="text" name="wali" value="{{old('wali')}}" class="form-control" placeholder=""></td>
     </tr>
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;6. Alamat Wali Santri</td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="text" name="alamat_wali" class="form-control" placeholder=""></td>
+      <td><input type="text" name="alamat_wali" value="{{old('alamat_wali')}}" class="form-control" placeholder=""></td>
     </tr>
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;7. Pekerjaan wali santri </td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="text" name="pekerjaan_wali" class="form-control" placeholder=""></td>
+      <td><input type="text" name="pekerjaan_wali" value="{{old('pekerjaan_wali')}}" class="form-control" placeholder=""></td>
     </tr>
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;8. No Hp orang tua atau wali santri  </td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="text" name="no_hp_ortu" class="form-control" placeholder=""></td>
+      <td><input type="text" name="no_hp_ortu" value="{{old('no_hp_ortu')}}" class="form-control" placeholder=""></td>
     </tr>
     <tr>
       <td width="30%" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;9. No WA orang tua atau wali santri </td>
       <td width="5%" align="center" valign="middle">:</td>
-      <td><input type="text" name="no_wa_ortu" class="form-control" placeholder=""></td>
+      <td><input type="text" name="no_wa_ortu" value="{{old('no_wa_ortu')}}" class="form-control" placeholder=""></td>
     </tr>
     <tr>
       <td colspan="3"><div class="d-grid gap-2"><button type="submit" class="btn btn-success btn-block">Simpan</button></div></td>

@@ -14,5 +14,31 @@ Dashboard
   </div>
 
   <h5>Selamat Datang, {{auth()->user()->name}}</h5>
+  <hr>
+  <center><h3>Jumlah Siswa Terdaftar</h3></center>
+  <div class="row">
+  	<div class="col-md-4">
+  		<div class="alert alert-info">
+  			
+  			<h3><center>MIPA</center></h3>
+  			<h4><center>{{$jml_mipa}}</center></h4>
+  		</div>
+  		
+  	</div>
+  	<div class="col-md-4">
+  		<div class="alert alert-info">
+  			
+  			<h3><center>IPS</center></h3>
+  			<h4><center>{{$jml_ips}}</center></h4>
+  		</div>
+  	</div>
+  	<div class="col-md-4">
+  		<div class="alert alert-info">
+  			
+  			<h3><center>PK</center></h3>
+  			<h4><center>{{$jml_pk}}</center></h4>
+  		</div>
+  	</div>
+  </div>
 </main>
 @endsection
