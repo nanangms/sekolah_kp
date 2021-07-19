@@ -13,24 +13,32 @@ class PendaftaranController extends Controller
     	$user_id = auth()->user()->id;
     	$cek = Pendaftaran_siswa::where('user_id',$user_id)->count();
     	$data_siswa = Pendaftaran_siswa::where('user_id',$user_id)->first();
+        $data_berkas = Upload_berkas::where('pendaftaran_siswa_id',$data_siswa->id)->first();
     	if($cek == 0){
         	return view('pendaftaran.form');
     	}elseif($cek == 1){
-    		return view('pendaftaran.berhasil',compact('data_siswa'));
+    		return view('pendaftaran.berhasil',compact('data_siswa','data_berkas'));
     	}
     }
 
     public function upload_berkas()
     {
     	$user_id = auth()->user()->id;
-    	$data_siswa = Pendaftaran_siswa::where('user_id',$user_id)->first();
-        $cek_data_berkas = Upload_berkas::where('pendaftaran_siswa_id',$data_siswa->id)->count();
-        $data_berkas = Upload_berkas::where('pendaftaran_siswa_id',$data_siswa->id)->first();
-        if($cek_data_berkas == 0){
-            return view('pendaftaran.upload_berkas',compact('data_siswa'));
-        }elseif($cek_data_berkas == 1){
-            return view('pendaftaran.upload_berkas_berhasil',compact('data_siswa','data_berkas'));
+        $cek_data_siswa = Pendaftaran_siswa::where('user_id',$user_id)->count();
+        if($cek_data_siswa == 1){
+            $data_siswa = Pendaftaran_siswa::where('user_id',$user_id)->first();
+            $cek_data_berkas = Upload_berkas::where('pendaftaran_siswa_id',$data_siswa->id)->count();
+            $data_berkas = Upload_berkas::where('pendaftaran_siswa_id',$data_siswa->id)->first();
+            if($cek_data_berkas == 0){
+                return view('pendaftaran.upload_berkas',compact('data_siswa','cek_data_berkas','cek_data_siswa'));
+            }elseif($cek_data_berkas == 1){
+                return view('pendaftaran.upload_berkas_berhasil',compact('data_siswa','data_berkas'));
+            }
+        }else{
+            return view('pendaftaran.upload_berkas',compact('cek_data_siswa'));
         }
+
+    	
         
     }
 
@@ -81,6 +89,27 @@ class PendaftaranController extends Controller
         $berkas->foto_akta              = $foto_akta;
         $berkas->foto_kk                = $foto_kk;
         $berkas->skhu                   = $skhu;
+        $berkas->save();
+
+        if(auth()->user()->role == 'admin'){
+            return redirect('/data-pendaftaran')->with('sukses','Pendaftaran berhasil');
+        }elseif(auth()->user()->role == 'siswa'){
+            return redirect()->back()->with('sukses','Upload berhasil');
+        }
+    }
+
+    public function upload_bukti(Request $request,$id)
+    {
+
+        $this->validate($request,[
+            'foto_bukti'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
+        $foto_bukti = str_replace(' ','',$request->nama_lengkap).'_'.time().'.'.$request->foto_bukti->extension();  
+        $request->foto_bukti->move(public_path('images/foto_bukti'), $foto_bukti);
+
+        $berkas = Upload_berkas::where('id',$id)->first();;
+        $berkas->foto_bukti                   = $foto_bukti;
         $berkas->save();
 
         if(auth()->user()->role == 'admin'){

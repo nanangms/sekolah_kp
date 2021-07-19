@@ -12,6 +12,7 @@ Upload Berkas
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h4>Upload Berkas</h4>
   </div>
+  @if($cek_data_siswa == 1)
   <span class="text-danger">Format file : jpeg/jpg/png <br>
   Ukuran Maksimal : 2mb</span>
   <form action="/upload-berkas/submit" method="post" enctype="multipart/form-data">
@@ -22,32 +23,35 @@ Upload Berkas
     <tr>
       <td>Pas Foto 3x4</td>
       <td><input type="file" name="pas_photo" required></td>
-      <td><button type="submit"> Kirim</button></td>
     </tr>
     <tr>
       <td>Foto Ijazah</td>
       <td><input type="file" name="foto_ijazah" required></td>
-      <td><button type="submit"> Kirim</button></td>
+ 
     </tr>
     <tr>
       <td>Foto Akta</td>
       <td><input type="file" name="foto_akta" required></td>
-      <td><button type="submit"> Kirim</button></td>
+
     </tr>
     <tr>
       <td>Foto KK</td>
       <td><input type="file" name="foto_kk" required></td>
-      <td><button type="submit"> Kirim</button></td>
+
     </tr>
     <tr>
       <td>Foto SKHU/STTB</td>
       <td><input type="file" name="skhu" required></td>
-      <td><button type="submit"> Kirim</button></td>
+   
     </tr>
     <tr>
-      <td colspan="3"><button type="submit"> Kirim</button></td>
+      <td colspan="3"><button type="submit" class="btn btn-success"> Kirim</button></td>
     </tr>
   </table>
   </form>
+  @else
+    <div class="alert alert-danger">
+      <h3>Anda Belum Melakukan Pendaftaran, silahkan Daftar terlebih dahulu</h3></div>
+  @endif
 </main>
 @endsection

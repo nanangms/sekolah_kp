@@ -32,7 +32,29 @@ Pendaftaran Siswa Baru
     <button class="btn btn-danger">Ditolak</button>
   @endif
   <br><br>
-  
+  @if($data_siswa->status == 'Diterima')
+    @if($data_berkas->foto_bukti == null)
+    Upload Bukti Pembayaran <br>
+    <form action="/upload-bukti/{{$data_berkas->id}}" method="post" enctype="multipart/form-data">
+      @csrf
+      <input type="text" name="" value="{{$data_berkas->id}}">
+      <input type="text" name="nama_lengkap" value="{{$data_siswa->nama_lengkap}}">
+    <table width="100%" class="table table-bordered">
+      <tr>
+        <td>Foto Bukti</td>
+        <td><input type="file" name="foto_bukti" required><button type="submit" class="btn btn-primary"> Kirim</button></td>
+      </tr>
+    </table>
+    </form>
+    @else
+      <table width="100%" class="table table-bordered">
+        <tr>
+          <td>Foto Bukti</td>
+          <td><a href="{{asset('images/foto_bukti/'.$data_berkas->foto_bukti)}}" target="_blank"><img src="{{asset('images/foto_bukti/'.$data_berkas->foto_bukti)}}" width="100px"></a></td>
+        </tr>
+      </table>
+    @endif
+  @endif
 
 </main>
 @endsection

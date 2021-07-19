@@ -31,6 +31,7 @@ Route::group(['middleware'=>['auth']],function(){
 	Route::get('/pendaftaran-siswa-baru', [App\Http\Controllers\PendaftaranController::class, 'form_pendaftaran']);
 	Route::post('/submit-pendaftaran-siswa-baru', [App\Http\Controllers\PendaftaranController::class, 'psb_submit']);
 	Route::get('/upload-berkas', [App\Http\Controllers\PendaftaranController::class, 'upload_berkas']);
+	Route::post('/upload-bukti/{id}', [App\Http\Controllers\PendaftaranController::class, 'upload_bukti']);
 	Route::post('/upload-berkas/submit', [App\Http\Controllers\PendaftaranController::class, 'upload_berkas_submit']);
 	Route::get('/cetak-formulir/{no_daftar}', [App\Http\Controllers\PendaftaranController::class, 'cetak_form']);
 
@@ -46,5 +47,11 @@ Route::group(['middleware'=>['auth']],function(){
 	Route::get('/upload-berkas-admin/{id}', [App\Http\Controllers\PendaftaranController::class, 'upload_berkas_admin']);
 
 	Route::get('/user', [App\Http\Controllers\UserController::class, 'index']);
+	Route::get('/user/tambah', [App\Http\Controllers\UserController::class, 'tambah']);
+	Route::post('/user/tambah/submit', [App\Http\Controllers\UserController::class, 'user_submit']);
+	Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
+	Route::post('/user/edit/{id}/submit', [App\Http\Controllers\UserController::class, 'edit_submit']);
+	Route::get('/user/{id}/delete', [App\Http\Controllers\UserController::class, 'delete']);
 	Route::get('/data-sekolah', [App\Http\Controllers\DatasekolahController::class, 'index']);
+	Route::post('/data-sekolah/edit/{id}/submit', [App\Http\Controllers\DatasekolahController::class, 'edit_submit']);
 });
