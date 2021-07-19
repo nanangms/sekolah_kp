@@ -45,7 +45,17 @@ Data Pendaftaran
               <a href="/upload-berkas-admin/{{$p->id}}" class="btn btn-secondary btn-sm"><i class="fa fa-file"></i> Lihat Berkas</a>
             @endif
           </td>
-          <td>{{$p->status}}</td>
+          <td>
+            @if($p->status == null)
+              <span class="badge bg-warning">dalam proses</span>
+             
+            @elseif($p->status == 'Diterima')
+              <span class="badge bg-success">Diterima</span>
+            @elseif($p->status == 'Ditolak')
+              <span class="badge bg-danger">Ditolak</span>
+            @endif
+
+            </td>
           <td>
             <a href="/data-pendaftaran/detail/{{$p->no_pendaftaran}}" class="btn btn-primary btn-sm" title="Detail"><i class="fa fa-eye"></i> Detail</a>
             <a href="/data-pendaftaran/edit/{{$p->no_pendaftaran}}" class="btn btn-warning btn-sm" title="Edit"><i class="fa fa-edit"></i> Edit</a>

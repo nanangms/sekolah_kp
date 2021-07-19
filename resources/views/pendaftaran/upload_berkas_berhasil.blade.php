@@ -33,6 +33,7 @@ Upload Berkas Berhasil
       <td>Foto Akta</td>
       <td>Foto KK</td>
       <td>Foto SKHU/STTB</td>
+      <td>Foto Bukti</td>
     </tr>
     <tr>
       <td>{{$data_siswa->nama_lengkap}} / {{$data_siswa->no_pendaftaran}}</td>
@@ -41,6 +42,7 @@ Upload Berkas Berhasil
       <td><a href="{{asset('images/foto_akta/'.$data_berkas->foto_akta)}}" target="_blank"><img src="{{asset('images/foto_akta/'.$data_berkas->foto_akta)}}" width="100px"></a></td>
       <td><a href="{{asset('images/foto_kk/'.$data_berkas->foto_kk)}}" target="_blank"><img src="{{asset('images/foto_kk/'.$data_berkas->foto_kk)}}" width="100px"></a></td>
       <td><a href="{{asset('images/skhu/'.$data_berkas->skhu)}}" target="_blank"><img src="{{asset('images/skhu/'.$data_berkas->skhu)}}" width="100px"></a></td>
+      <td><a href="{{asset('images/foto_bukti/'.$data_berkas->foto_bukti)}}" target="_blank"><img src="{{asset('images/foto_bukti/'.$data_berkas->foto_bukti)}}" width="100px"></a></td>
     </tr>
   </table>
   
