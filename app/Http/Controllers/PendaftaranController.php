@@ -12,13 +12,14 @@ class PendaftaranController extends Controller
     {
     	$user_id = auth()->user()->id;
     	$cek = Pendaftaran_siswa::where('user_id',$user_id)->count();
-    	$data_siswa = Pendaftaran_siswa::where('user_id',$user_id)->first();
-        $data_berkas = Upload_berkas::where('pendaftaran_siswa_id',$data_siswa->id)->first();
-    	if($cek == 0){
-        	return view('pendaftaran.form');
-    	}elseif($cek == 1){
-    		return view('pendaftaran.berhasil',compact('data_siswa','data_berkas'));
-    	}
+        if($cek == 0){
+            return view('pendaftaran.form');
+        }elseif($cek == 1){
+            $data_siswa = Pendaftaran_siswa::where('user_id',$user_id)->first();
+            $cek_data_berkas = Upload_berkas::where('pendaftaran_siswa_id',$data_siswa->id)->count();
+            $data_berkas = Upload_berkas::where('pendaftaran_siswa_id',$data_siswa->id)->first();
+            return view('pendaftaran.berhasil',compact('data_siswa','data_berkas'));
+        }
     }
 
     public function upload_berkas()

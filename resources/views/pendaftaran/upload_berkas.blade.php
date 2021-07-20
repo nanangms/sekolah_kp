@@ -17,8 +17,8 @@ Upload Berkas
   Ukuran Maksimal : 2mb</span>
   <form action="/upload-berkas/submit" method="post" enctype="multipart/form-data">
     @csrf
-    <input type="text" name="pendaftaran_siswa_id" value="{{$data_siswa->id}}">
-    <input type="text" name="nama_lengkap" value="{{$data_siswa->nama_lengkap}}">
+    <input type="hidden" name="pendaftaran_siswa_id" value="{{$data_siswa->id}}">
+    <input type="hidden" name="nama_lengkap" value="{{$data_siswa->nama_lengkap}}">
   <table width="100%" class="table table-bordered">
     <tr>
       <td>Pas Foto 3x4</td>

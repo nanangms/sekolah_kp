@@ -13,7 +13,7 @@ Pendaftaran Siswa Baru
     <h4>Pendaftaran Siswa baru</h4>
   </div>
   @if($data_siswa->status == null)
-    <div class="alert alert-warning"><h4>Pendaftaran Telah Dikirim, sedang dalam proses Verifikasi</h4></div>
+    <div class="alert alert-warning"><h4>Pendaftaran Telah Dikirim, Langkah selanjutnya Silahkan Upload Berkas <a href="/upload-berkas">disini</a></h4></div>
   @elseif($data_siswa->status == 'Diterima')
     <div class="alert alert-success"><h4>Pendaftaran Telah diverifikasi, selamat anda lolos ketahap berikutnya</h4></div>
   @elseif($data_siswa->status == 'Ditolak')
@@ -37,8 +37,8 @@ Pendaftaran Siswa Baru
     Upload Bukti Pembayaran <br>
     <form action="/upload-bukti/{{$data_berkas->id}}" method="post" enctype="multipart/form-data">
       @csrf
-      <input type="text" name="" value="{{$data_berkas->id}}">
-      <input type="text" name="nama_lengkap" value="{{$data_siswa->nama_lengkap}}">
+      <input type="hidden" name="" value="{{$data_berkas->id}}">
+      <input type="hidden" name="nama_lengkap" value="{{$data_siswa->nama_lengkap}}">
     <table width="100%" class="table table-bordered">
       <tr>
         <td>Foto Bukti</td>
