@@ -51,9 +51,11 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
-            <p class="mb-4"><img src="images/logo.png" alt="Image" class="img-fluid"></p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo minima qui dolor, iusto iure.</p>  
-            <p><a href="#">Learn More</a></p>
+           <!--  <p class="mb-4"><img src="{{ asset('images/logo_lpi.png') }}" width="100px" alt="Image" class="img-fluid"></p> -->
+           <h3 class="footer-heading"><span>Tentang Kami</span></h3>
+          
+            <p>Lembaga pendidikan Islam Pondok Pesantren As Salam Rimbo Bujang Berdiri pada tahun 1989, didiirkan oleh para tokoh agam di wilayah Kecematan Rimbo Bujang yang di prakarsai oleh Ustadz KH. Hajat Aziz, BA. dibawah naungan Yayaysan Pendidikan Islam As-Salam Rimbo Bujang.</p>
+        <p><a href="#">Read more</a></p>
           </div>
           <div class="col-lg-3">
             <h3 class="footer-heading"><span>Jenjang Pendidikan</span></h3>

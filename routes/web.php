@@ -21,6 +21,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/pendaftaran', [App\Http\Controllers\IndexController::class, 'pendaftaran']);
+Route::get('/profil_sekolah', [App\Http\Controllers\IndexController::class, 'profil_sekolah']);
+Route::get('/brosur', [App\Http\Controllers\IndexController::class, 'brosur']);
+Route::get('/persyaratan', [App\Http\Controllers\IndexController::class, 'persyaratan']);
+Route::get('/alur_psb', [App\Http\Controllers\IndexController::class, 'alur_psb']);
 Route::post('/pendaftaran/submit', [App\Http\Controllers\IndexController::class, 'pendaftaran_submit']);
 Route::get('/pendaftaran/berhasil', [App\Http\Controllers\IndexController::class, 'pendaftaran_berhasil']);
 

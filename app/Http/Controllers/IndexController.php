@@ -16,6 +16,27 @@ class IndexController extends Controller
     {
         return view('homepage.pendaftaran');
     }
+
+    public function profil_sekolah()
+    {
+        return view('homepage.profil_sekolah');
+    }
+
+    public function brosur()
+    {
+        return view('homepage.brosur');
+    }
+
+    public function persyaratan()
+    {
+        return view('homepage.persyaratan');
+    }
+
+    public function alur_psb()
+    {
+        return view('homepage.alur_psb');
+    }
+
     public function login_siswa()
     {
         return view('homepage.login_siswa');

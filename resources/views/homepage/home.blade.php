@@ -21,9 +21,9 @@ Home
   <div class="container">
     <div class="row mb-5 justify-content-center text-center">
       <div class="col-lg-4 mb-5">
-        <h2 class="section-title-underline mb-5">
+        <h4 class="section-title-underline mb-5">
           <span>Kenapa Memilih Pondok Pesantren As-Salam</span>
-        </h2>
+        </h4>
       </div>
     </div>
     <div class="row">
@@ -87,7 +87,7 @@ Home
 
 
 
-<div class="section-bg style-1" style="background-image: url('images/about_1.jpg');">
+<!-- <div class="section-bg style-1" style="background-image: url('images/about_1.jpg');">
   <div class="container">
     <div class="row">
       <div class="col-lg-4">
@@ -101,7 +101,7 @@ Home
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
